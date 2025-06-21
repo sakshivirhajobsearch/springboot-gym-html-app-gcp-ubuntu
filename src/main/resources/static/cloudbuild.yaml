@@ -1,0 +1,8 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['-m', 'cp', '-r', 'static-gym-html-css-app/*', 'gs://YOUR_BUCKET_NAME']
+
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['web', 'set', '-m', 'Home.html', '-e', '404.html', 'gs://YOUR_BUCKET_NAME']
+
+images: []
